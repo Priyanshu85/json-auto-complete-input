@@ -64,6 +64,7 @@ export default App;
 | `inputStyle`      | CSSProperties (optional)      | Inline styles for the input                             |
 | `popoverStyle`    | CSSProperties (optional)      | Inline styles for the suggestion popover                |
 | `suggestionStyle` | CSSProperties (optional)      | Inline styles for each suggestion item                  |
+| `suggestionActiveStyle`| CSSProperties (optional)  | Inline styles for the active suggestion item            |
 | `className`       | string (optional)             | Custom CSS class for the input                          |
 | ...others         | any                           | Pass other input props as needed                        |
 
@@ -84,4 +85,5 @@ MIT © [Priyanshu Gupta](https://github.com/Priyanshu85)
 ## Links
 
 - [GitHub Repository](https://github.com/Priyanshu85/json-auto-complete-input)
+- [Live Demo](https://json-auto-complete-example.vercel.app/)
 - [Report Issues](https://github.com/Priyanshu85/json-auto-complete-input/issues)

@@ -1,8 +1,7 @@
-import React, {
+import {
     useState,
     useEffect,
     type KeyboardEvent,
-    type FC,
     type CSSProperties,
   } from 'react';
   
@@ -15,10 +14,11 @@ import React, {
     inputStyle?: CSSProperties;
     popoverStyle?: CSSProperties;
     suggestionStyle?: CSSProperties;
+    suggestionActiveStyle?: CSSProperties;
   }
   
  const JsonAutoCompleteInput = (
-  { jsonData, value, onChange, placeholder, label, inputStyle, popoverStyle, suggestionStyle }: JsonAutoCompleteInputProps
+  { jsonData, value, onChange, placeholder, label, inputStyle, popoverStyle, suggestionStyle, suggestionActiveStyle }: JsonAutoCompleteInputProps
  )=> {
     const [inputValue, setInputValue] = useState(value);
     const [suggestions, setSuggestions] = useState<string[]>([]);
@@ -127,10 +127,11 @@ import React, {
                 key={sugg}
                 style={{
                   padding: '6px 10px',
-                  backgroundColor: i === selectedIndex ? '#eee' : '#000',
                   cursor: 'pointer',
-                  color: i === selectedIndex ? '#000' : '#fff',
-                  ...suggestionStyle,
+                  ...(i === selectedIndex
+                    ? { backgroundColor: '#eee', color: '#000', ...suggestionActiveStyle }
+                    : { backgroundColor: '#000', color: '#fff', ...suggestionStyle }
+                  )
                 }}
                 onMouseDown={() => handleSelect(sugg)}
               >
@@ -144,4 +145,3 @@ import React, {
   };
 
 export default JsonAutoCompleteInput
-  
