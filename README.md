@@ -23,9 +23,10 @@ yarn add json-autocomplete-input
 ## Usage
 
 ```tsx
-import React from 'react';
+import React,{useState} from 'react';
 import JsonAutocompleteInput from 'json-autocomplete-input';
 
+const [value,setValue] = useState<string>();
 const data = {
   user: {
     name: 'John',
@@ -40,9 +41,10 @@ const data = {
 function App() {
   return (
     <JsonAutocompleteInput
-      data={data}
+      jsonData={data}
       onChange={value => console.log(value)}
       placeholder="Type a JSON path..."
+      value={value}
     />
   );
 }
@@ -51,12 +53,19 @@ export default App;
 ```
 
 ## Props
-| Prop         | Type     | Description                                 |
-|--------------|----------|---------------------------------------------|
-| `data`       | object   | The JSON object to provide path suggestions |
-| `onChange`   | function | Callback when input value changes           |
-| `placeholder`| string   | Input placeholder text                      |
-| ...others    | any      | Pass other input props as needed            |
+
+| Prop              | Type                          | Description                                             |
+|-------------------|-------------------------------|---------------------------------------------------------|
+| `jsonData`        | any                           | The JSON object to provide path suggestions             |
+| `value`           | string                        | The current value of the input                          |
+| `onChange`        | (value: string) => void       | Callback when input value changes                       |
+| `placeholder`     | string (optional)             | Input placeholder text                                  |
+| `label`           | string (optional)             | Label for the input field                               |
+| `inputStyle`      | CSSProperties (optional)      | Inline styles for the input                             |
+| `popoverStyle`    | CSSProperties (optional)      | Inline styles for the suggestion popover                |
+| `suggestionStyle` | CSSProperties (optional)      | Inline styles for each suggestion item                  |
+| `className`       | string (optional)             | Custom CSS class for the input                          |
+| ...others         | any                           | Pass other input props as needed                        |
 
 ## Contributing
 
@@ -73,5 +82,6 @@ Contributions are welcome! Please open issues or submit pull requests for improv
 MIT © [Priyanshu Gupta](https://github.com/Priyanshu85)
 
 ## Links
+
 - [GitHub Repository](https://github.com/Priyanshu85/json-auto-complete-input)
 - [Report Issues](https://github.com/Priyanshu85/json-auto-complete-input/issues)
