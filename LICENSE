@@ -1,0 +1,9 @@
+
+---
+
+## ✅ 5. **Publish to npm**
+
+### 1. Login to npm
+
+```bash
+npm login
