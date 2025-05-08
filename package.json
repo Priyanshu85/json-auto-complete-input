@@ -1,6 +1,6 @@
 {
   "name": "json-autocomplete-input",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A JSON path-based autocomplete input React component.",
   "main": "dist/json-autocomplete-input.cjs.js",
   "module": "dist/json-autocomplete-input.es.js",
